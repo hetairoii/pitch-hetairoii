@@ -34,7 +34,7 @@ const ProjectCard = ({ name, image, imageFit = 'cover', imageBg, description, te
   >
     <div className="p-3 pb-0">
       <div
-        className="relative h-28 md:h-36 2xl:h-52 w-full overflow-hidden rounded-xl border border-ink/25"
+        className="relative h-[16dvh] min-h-24 max-h-48 w-full overflow-hidden rounded-xl border border-ink/25"
         style={imageBg ? { backgroundColor: imageBg } : undefined}
       >
         {image ? (
@@ -54,16 +54,16 @@ const ProjectCard = ({ name, image, imageFit = 'cover', imageBg, description, te
       </div>
     </div>
 
-    <div className="p-4 md:p-5 2xl:p-7 flex flex-col flex-1 gap-2">
-      <h3 className="font-display italic font-medium text-2xl md:text-3xl 2xl:text-5xl text-ink">{name}</h3>
-      <p className="text-muted text-sm 2xl:text-lg line-clamp-5 md:line-clamp-4 2xl:line-clamp-6">{description}</p>
+    <div className="p-4 md:p-5 flex flex-col flex-1 gap-2">
+      <h3 className="font-display italic font-medium text-2xl md:text-3xl text-ink leading-tight">{name}</h3>
+      <p className="text-muted text-sm md:text-[0.95rem] leading-snug line-clamp-4">{description}</p>
 
       {tech.length > 0 && (
         <div className="flex flex-wrap gap-2 mt-auto pt-1">
           {tech.map((t) => (
             <span
               key={t}
-              className="label !text-[0.6rem] 2xl:!text-xs px-2.5 py-1 rounded-full border border-ink/40 text-ink"
+              className="label !text-[0.6rem] px-2.5 py-1 rounded-full border border-ink/40 text-ink"
             >
               {t}
             </span>

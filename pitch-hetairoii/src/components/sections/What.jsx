@@ -17,8 +17,8 @@ const IMAGES = {
 
 const What = () => (
   <Section id={meta.id}>
-    <div className="mb-4 md:mb-7">
-      <Heading id={meta.id} label={meta.eyebrow}>
+    <div className="mb-3 md:mb-5">
+      <Heading id={meta.id} label={meta.eyebrow} className="text-[clamp(1.5rem,2.6vw,2.6rem)]">
         {what.subtitle}
       </Heading>
     </div>
