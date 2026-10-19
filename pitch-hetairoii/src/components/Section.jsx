@@ -4,13 +4,14 @@ import { stagger, rise } from './motion'
 
 // Una diapositiva: ocupa 100vh, se ancla con scroll-snap y lleva la franja de damero abajo.
 // El título se pone con <Heading> para que aria-labelledby apunte a él.
-const Section = ({ id, children, className = '' }) => (
+const Section = ({ id, children, background, className = '' }) => (
   <section
     id={id}
     aria-labelledby={id + '-title'}
     className={`relative h-dvh w-full snap-start snap-always flex items-center justify-center overflow-hidden px-6 md:px-24 pt-16 pb-10 ${className}`}
   >
     <DotPattern color="#1b2a52" opacity={0.1} spacing={22} size={1.4} />
+    {background}
     <motion.div
       className="relative z-10 w-full max-w-7xl"
       variants={stagger}

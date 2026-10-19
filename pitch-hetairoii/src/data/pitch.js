@@ -123,12 +123,31 @@ export const projects = [
 
 ]
 
+// Propuesta de valor: texto base del usuario dividido en cuatro bloques.
+// highlight = frase (contenida en text) que se resalta en coral.
 export const value = {
   title: 'Mi propuesta de valor',
   blocks: [
-    { question: '¿Qué aporto?', answer: 'Apps, automatización e inteligencia artificial.' },
-    { question: '¿Qué soluciono?', answer: 'El tiempo perdido en procesos manuales y en papel.' },
-    { question: '¿Quién se beneficia?', answer: 'Pymes y negocios locales, como los talleres mecánicos.' },
+    {
+      lead: 'Para',
+      text: 'negocios en crecimiento que pierden tiempo y dinero en procesos manuales o herramientas que no encajan,',
+      highlight: 'tiempo y dinero',
+    },
+    {
+      lead: 'Yo',
+      text: 'diseño soluciones de software a medida con automatización e IA que los hacen despegar en su nicho,',
+      highlight: 'despegar en su nicho',
+    },
+    {
+      lead: 'A diferencia de',
+      text: 'los sistemas genéricos que obligan a cambiar tu forma de trabajar,',
+      highlight: 'obligan a cambiar tu forma de trabajar',
+    },
+    {
+      lead: 'Porque',
+      text: 'combino formación en Ingeniería Informática con experiencia real en proyectos desplegados y una forma de entender a las personas que desarrollé en voluntariado, representación estudiantil y en debate.',
+      highlight: 'experiencia real en proyectos desplegados',
+    },
   ],
 }
 
