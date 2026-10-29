@@ -1,7 +1,7 @@
 import Section, { Heading } from '../Section'
 import QRContact from '../QRContact'
 import ContactLinks from '../ContactLinks'
-import { sections, cta } from '../../data/pitch'
+import { sections, cta, iconCredit } from '../../data/pitch'
 
 const meta = sections.find((s) => s.id === 'cierre')
 
@@ -17,6 +17,13 @@ const Cta = () => (
       </div>
       <QRContact />
     </div>
+
+    {/* atribución exigida por la licencia gratuita de los iconos */}
+    <p className="label mt-6 text-center !text-[0.58rem] text-muted md:mt-8">
+      <a href={iconCredit.href} target="_blank" rel="noopener noreferrer" className="underline decoration-ink/30 underline-offset-4 hover:text-ink">
+        {iconCredit.label}
+      </a>
+    </p>
   </Section>
 )
 

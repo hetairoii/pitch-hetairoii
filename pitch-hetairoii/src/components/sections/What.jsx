@@ -1,35 +1,38 @@
+import { motion } from 'framer-motion'
 import Section, { Heading } from '../Section'
-import ProjectCard from '../ProjectCard'
-import { sections, what, projects } from '../../data/pitch'
-import universalAcademyImg from '../../assets/universal-academy-screenshot.png'
-import alosPitsLogo from '../../assets/a-los-pits-logo.webp'
-import couchyLogo from '../../assets/couchy-logo.webp'
+import GoldenCircle from '../GoldenCircle'
+import RetroMonitor from '../RetroMonitor'
+import Thing from '../Thing'
+import { rise } from '../motion'
+import { sections, what } from '../../data/pitch'
+import laptop from '../../assets/icons/what-software.webp'
+import shield from '../../assets/icons/shield.webp'
+import robot from '../../assets/icons/what-automation.webp'
 
 const meta = sections.find((s) => s.id === 'que')
 
-// fit 'contain' = logo completo sobre su color de fondo; 'cover' = captura recortada.
-// Sin entrada = silueta de ProjectCard (placeholder).
-const IMAGES = {
-  alosPits: { src: alosPitsLogo, fit: 'contain', bg: '#0d1930' },
-  couchy: { src: couchyLogo, fit: 'contain', bg: '#f0eadb' },
-  universalAcademy: { src: universalAcademyImg, fit: 'cover' },
-}
-
+// Software a medida → ciberseguridad + automatización (misma estructura que Por qué y Cómo)
 const What = () => (
   <Section id={meta.id}>
-    <div className="mb-3 md:mb-5">
-      <Heading id={meta.id} label={meta.eyebrow} className="text-[clamp(1.5rem,2.6vw,2.6rem)]">
-        {what.subtitle}
-      </Heading>
-    </div>
+    <div className="grid w-full items-center gap-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:gap-14">
+      <motion.div variants={rise} className="order-2 w-[min(46vw,24dvh)] justify-self-center md:order-1 md:w-[min(100%,50dvh)]">
+        <RetroMonitor>
+          <GoldenCircle level={meta.circleLevel} size="100%" />
+        </RetroMonitor>
+      </motion.div>
 
-    <ul className="-mx-6 flex w-[calc(100%+3rem)] snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:w-full md:grid-cols-[1.25fr_1fr_1fr] md:gap-6 md:overflow-visible md:px-0 md:pb-0">
-      {projects.map((project) => (
-        <li key={project.id} className="w-[82vw] flex-none snap-center md:w-auto">
-          <ProjectCard {...project} image={IMAGES[project.imageKey]?.src} imageFit={IMAGES[project.imageKey]?.fit} imageBg={IMAGES[project.imageKey]?.bg} />
-        </li>
-      ))}
-    </ul>
+      <div className="order-1 md:order-2">
+        <Heading id={meta.id} label={meta.eyebrow} align="left" className="text-[clamp(1.5rem,3vw,3rem)]">
+          {what.statement}
+        </Heading>
+
+        <div className="mt-5 flex items-end justify-center gap-3 md:mt-9 md:justify-start md:gap-7">
+          <Thing src={laptop} alt="Portátil: software a medida" float={0.1} className="h-14 w-auto md:h-[min(15dvh,120px)]" />
+          <Thing src={shield} alt="Escudo: ciberseguridad" float={0.8} className="h-16 w-auto md:h-[min(18dvh,146px)]" />
+          <Thing src={robot} alt="Robot: automatización" float={1.4} className="h-16 w-auto md:h-[min(18dvh,146px)]" />
+        </div>
+      </div>
+    </div>
   </Section>
 )
 

@@ -80,8 +80,9 @@ const Intro = ({ active }) => {
             />
           </motion.div>
 
+          {/* mi mantra */}
           <motion.div {...fade(0.7)} className="order-3 self-center text-center md:text-left">
-            <p className="font-display text-[clamp(1.5rem,2.8vw,3rem)] font-medium italic leading-tight">
+            <p className="font-display text-[clamp(1.05rem,1.75vw,1.9rem)] font-medium italic leading-snug">
               {profile.tagline}
             </p>
           </motion.div>

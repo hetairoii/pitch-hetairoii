@@ -9,7 +9,9 @@ import Intro from './components/sections/Intro'
 import Why from './components/sections/Why'
 import How from './components/sections/How'
 import What from './components/sections/What'
+import Projects from './components/sections/Projects'
 import Value from './components/sections/Value'
+import About from './components/sections/About'
 import Cta from './components/sections/Cta'
 import { useSlideNavigation } from './hooks/useSlideNavigation'
 import { sections } from './data/pitch'
@@ -64,9 +66,11 @@ function App() {
 
         <main ref={containerRef} className="slides relative z-10 h-dvh overflow-y-auto snap-y snap-mandatory scroll-smooth">
           <Intro active={activeIndex === 0} />
+          <About />
           <Why />
           <How />
           <What />
+          <Projects />
           <Value />
           <Cta />
         </main>
